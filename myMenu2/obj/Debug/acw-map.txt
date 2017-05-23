@@ -1,0 +1,12 @@
+myMenu2.MainActivity, myMenu2;md5ed8a66e1d515500cdc87c885d7ce220e.MainActivity
+myMenu2.MainActivity, myMenu2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed8a66e1d515500cdc87c885d7ce220e.MainActivity
+myMenu2.MainActivity;md5ed8a66e1d515500cdc87c885d7ce220e.MainActivity
+mymenu2.MainActivity;md5ed8a66e1d515500cdc87c885d7ce220e.MainActivity
+myMenu2.AppsListActivity, myMenu2;md5ed8a66e1d515500cdc87c885d7ce220e.AppsListActivity
+myMenu2.AppsListActivity, myMenu2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed8a66e1d515500cdc87c885d7ce220e.AppsListActivity
+myMenu2.AppsListActivity;md5ed8a66e1d515500cdc87c885d7ce220e.AppsListActivity
+mymenu2.AppsListActivity;md5ed8a66e1d515500cdc87c885d7ce220e.AppsListActivity
+myMenu2.CustomListAdapter, myMenu2;md5ed8a66e1d515500cdc87c885d7ce220e.CustomListAdapter
+myMenu2.CustomListAdapter, myMenu2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed8a66e1d515500cdc87c885d7ce220e.CustomListAdapter
+myMenu2.CustomListAdapter;md5ed8a66e1d515500cdc87c885d7ce220e.CustomListAdapter
+mymenu2.CustomListAdapter;md5ed8a66e1d515500cdc87c885d7ce220e.CustomListAdapter
