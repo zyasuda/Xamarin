@@ -113,7 +113,7 @@ namespace myMenu2
 			for (int i = 0; i < 16; i++)                    // アプリボタン１６個のデリゲートをセット
 			{
 				BtnId[i].Click += (sender, args) => ClickProc(sender);
-				BtnId[i].LongClick += longClickProc;
+				BtnId[i].LongClick += LongClickProc;
 			}
 		}
 
@@ -131,7 +131,7 @@ namespace myMenu2
 			}
 		}
 
-		public void longClickProc(object sender, EventArgs e)
+		public void LongClickProc(object sender, EventArgs e)
 		{
 			PopupMenu menu = new PopupMenu(this, centerButton);
 			menu.MenuInflater.Inflate(Resource.Layout.popup_menu, menu.Menu);
@@ -161,18 +161,66 @@ namespace myMenu2
 			var instAppTbl = PackageManager.QueryIntentActivities(mainIntent, 0);
 			var yamada = new List<TableItem>
 			{
-				new TableItem { name = "ヤマダモール", label = "http://ymall.jp" },
-				new TableItem { name = "ヤマダゲーム", label = "http://gpf.mymd.jp/" },
-				new TableItem { name = "ヤマダの保険", label = "https://sp.mymd.jp/smrt/ymdapp/?p=aHR0cHM6Ly9zcC5teW1kLmp wL3NtcnQvaW5kZXgucGhwP21vZHVsZT1pbnN1cmFuY2UmYWN0aW" },
-				new TableItem { name = "ヤマダのでんき", label = "http://www.yamadanodenki.com/" },
-				new TableItem { name = "ヤマダの冠婚葬祭", label = "https://sp.mymd.jp/pc/index.php?a=familysupport.index" },
-				new TableItem { name = "ヤマダの家電電子保証書", label = "http://sp.mymd.jp/smrt/info/?p=aHR0cHM6Ly9zcC5teW1kLmpwL3NtcnQvaW5kZXgucGhwP21vZHVsZT1zaG9waGlzdG9yeSZhY3Rpb249c2hvcDAwMSZvdj0w" },
-				new TableItem { name = "ヤマダトータルリフォーム", label = "http://www.yamada-denki.jp/service/reform/" },
-				new TableItem { name = "ヤマダの住宅", label = "http://www.sxl.co.jp/" },
-				new TableItem { name = "ヤマダの住宅", label = "http://yamadawoodhouse.jp/" },
-				new TableItem { name = "ヤマダの旅行・宿泊", label = "https://yamada-familysupport.fc-club.com/sp/searchCategory/1" },
-				new TableItem { name = "やまだ書店", label = "http://yamadashoten.com/" },
-				new TableItem { name = "ヤマダ動画", label = "http://mov.mymd.jp/" }
+				new TableItem 
+                {   name = "ヤマダモール",
+                    label = "http://ymall.jp" ,
+                    icon = GetDrawable(Resource.Drawable.yamada_icon)
+                },
+				new TableItem
+                {   name = "ヤマダゲーム",
+                    label = "http://gpf.mymd.jp/",
+                    icon = GetDrawable(Resource.Drawable.GAME)
+                },
+				new TableItem
+                {   name = "ヤマダの保険",
+                    label = "https://sp.mymd.jp/smrt/ymdapp/?p=aHR0cHM6Ly9zcC5teW1kLmp wL3NtcnQvaW5kZXgucGhwP21vZHVsZT1pbnN1cmFuY2UmYWN0aW",
+                    icon = GetDrawable(Resource.Drawable.hoken)
+                },
+				new TableItem
+                {   name = "ヤマダのでんき",
+                    label = "http://www.yamadanodenki.com/",
+                    icon = GetDrawable(Resource.Drawable.electoronics)
+                },
+				new TableItem
+                {   name = "ヤマダの冠婚葬祭",
+                    label = "https://sp.mymd.jp/pc/index.php?a=familysupport.index",
+                    icon = GetDrawable(Resource.Drawable.Kankon)
+                },
+				new TableItem
+                {   name = "ヤマダの家電電子保証書",
+                    label = "http://sp.mymd.jp/smrt/info/?p=aHR0cHM6Ly9zcC5teW1kLmpwL3NtcnQvaW5kZXgucGhwP21vZHVsZT1zaG9waGlzdG9yeSZhY3Rpb249c2hvcDAwMSZvdj0w",
+                    icon = GetDrawable(Resource.Drawable.Warranty)
+                },
+				new TableItem
+                {   name = "ヤマダトータルリフォーム",
+                    label = "http://www.yamada-denki.jp/service/reform/",
+                    icon = GetDrawable(Resource.Drawable.reform)
+                },
+				new TableItem
+                {   name = "ヤマダの住宅",
+                    label = "http://www.sxl.co.jp/",
+                    icon = GetDrawable(Resource.Drawable.SxL_s1)
+                },
+				new TableItem
+                {   name = "ヤマダウッドハウス",
+                    label = "http://yamadawoodhouse.jp/",
+                    icon = GetDrawable(Resource.Drawable.WOODHOUSE)
+                },
+				new TableItem
+                {   name = "ヤマダの旅行・宿泊",
+                    label = "https://yamada-familysupport.fc-club.com/sp/searchCategory/1",
+                    icon = GetDrawable(Resource.Drawable.Travel)
+                },
+				new TableItem
+                {   name = "やまだ書店",
+                    label = "http://yamadashoten.com/",
+                    icon = GetDrawable(Resource.Drawable.book)
+                },
+				new TableItem
+                {   name = "ヤマダ動画",
+                    label = "http://mov.mymd.jp/",
+                    icon = GetDrawable(Resource.Drawable.movie)
+                }
 			};
 
 			appsList = new List<TableItem>();
@@ -181,13 +229,14 @@ namespace myMenu2
 			{
 				var tempApli = new TableItem                            // 変数だけの外部クラス
 				{
-					icon = anApp.ActivityInfo.LoadIcon(PackageManager), // アイコン
 					name = anApp.LoadLabel(PackageManager),             // アプリ名
 					label = anApp.ActivityInfo.PackageName,             // パッケージ名
+					icon = anApp.ActivityInfo.LoadIcon(PackageManager), // アイコン
 					idx = 0                                             // 配置場所
 				};
 				appsList.Add(tempApli);
-				Console.WriteLine("アクティビティ名：" + tempApli.icon);
+
+				Console.WriteLine("アクティビティ名：" + tempApli.icon);    //中身チェック！
 			}
 		}
 

@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{E327ADD1-6886-4AF5-A101-F6CB20E3468C}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="myMenu2/MainActivity.cs">
     <Files>
-      <File FileName="myMenu2/MainActivity.cs" Line="14" Column="79" />
+      <File FileName="myMenu2/MainActivity.cs" Line="231" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -9,6 +9,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.myMenu2 AndroidDesignerPreferredDevice="Nexus 5X" PreferredExecutionTarget="Android.Nexus_5X_API_25" AndroidDesignerPreferredTheme="Theme.Holo.Light.NoActionBar.TranslucentDecor" />
+  <MonoDevelop.Ide.ItemProperties.myMenu2 AndroidDesignerPreferredDevice="Nexus 5X" PreferredExecutionTarget="Android.Nexus_5X_API_25" AndroidDesignerPreferredTheme="Theme.Material.Light.DarkActionBar" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -108,7 +108,6 @@
             android:layout_columnWeight="1"
             android:scaleType="centerInside"
             android:background="@drawable/frame_style"
-            android:src="@drawable/shopping"
             android:layout_marginEnd="30dp"
             android:layout_marginTop="4.0dp"
             android:layout_marginBottom="12.0dp"
