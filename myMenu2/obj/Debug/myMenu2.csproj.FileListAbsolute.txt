@@ -37,3 +37,4 @@
 /Users/yasuda_keigo/Projects/myMenu2/myMenu2/obj/Debug/res/layout/popup_menu.xml
 /Users/yasuda_keigo/Projects/myMenu2/myMenu2/obj/Debug/R.cs.flag
 /Users/yasuda_keigo/Projects/myMenu2/myMenu2/obj/Debug/uploadflags.txt
+/Users/yasuda_keigo/Projects/myMenu2/myMenu2/obj/Debug/myMenu2.csprojResolveAssemblyReference.cache

@@ -9,9 +9,11 @@ using Android.Content.PM;
 using Android.Graphics;
 using Android.Webkit;
 
+using Android.Graphics.Drawables;
+
 namespace myMenu2
 {
-	[Activity(Label = "MyMenu", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light.NoActionBar.TranslucentDecor")]   // .Fullscreen
+	[Activity(Label = "MyMenu", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait, Theme = "@android:style/Theme.Holo.Light.NoActionBar.TranslucentDecor")]   // .Fullscreen
 																																		//[IntentFilter(new[] { Intent.ActionAssist }, Categories = new[] { Intent.CategoryDefault })]
 	public class MainActivity : Activity
 	{
@@ -29,7 +31,8 @@ namespace myMenu2
 
 		GridLayout centerFlm;
 
-		private const int RequestCode = 123;
+        private const int BtnCnt = 16;
+		//private const int RequestCode = 123;
 
 		#endregion
 
@@ -38,11 +41,13 @@ namespace myMenu2
 			base.OnCreate(savedInstanceState);
 
 			RequestWindowFeature(WindowFeatures.NoTitle);       // タイトルを非表示にする
-																// http://www.buildinsider.net/mobile/xamarintips/0002
+                                                                // http://www.buildinsider.net/mobile/xamarintips/0002
 			SetContentView(Resource.Layout.Main);
 
 			myViewWidth = Resources.DisplayMetrics.WidthPixels;
 			myViewHeight = Resources.DisplayMetrics.HeightPixels;
+
+            Toast.MakeText(this, "画面解像度：" + myViewWidth + "x" + myViewHeight, ToastLength.Long).Show();
 
 			centerButton = FindViewById<ImageButton>(Resource.Id.centerBtn);
 
@@ -110,7 +115,7 @@ namespace myMenu2
 				StartActivity(intent);
 			};
 
-			for (int i = 0; i < 16; i++)                    // アプリボタン１６個のデリゲートをセット
+			for (int i = 0; i < BtnCnt; i++)                    // アプリボタン１６個のデリゲートをセット
 			{
 				BtnId[i].Click += (sender, args) => ClickProc(sender);
 				BtnId[i].LongClick += LongClickProc;
@@ -120,7 +125,7 @@ namespace myMenu2
 		public void ClickProc(object sender)
 		{
 			var pm = PackageManager;
-			for (int i = 0; i < 16; i++)
+			for (int i = 0; i < BtnCnt; i++)
 			{
 				if (BtnId[i] == sender)
 				{
@@ -227,29 +232,39 @@ namespace myMenu2
 
 			foreach (ResolveInfo anApp in instAppTbl)
 			{
-				var tempApli = new TableItem                            // 変数だけの外部クラス
+				var tempApli = new TableItem                               // 変数だけの外部クラス
 				{
-					name = anApp.LoadLabel(PackageManager),             // アプリ名
-					label = anApp.ActivityInfo.PackageName,             // パッケージ名
-					icon = anApp.ActivityInfo.LoadIcon(PackageManager), // アイコン
-					idx = 0                                             // 配置場所
+					name = anApp.LoadLabel(PackageManager),                // アプリ名
+					label = anApp.ActivityInfo.PackageName,                // パッケージ名
+					icon = anApp.ActivityInfo.LoadIcon(PackageManager),    // アイコン
+					//idx = 0                                              // 配置場所
 				};
 				appsList.Add(tempApli);
 
-				Console.WriteLine("アクティビティ名：" + tempApli.icon);    //中身チェック！
+				Console.WriteLine("アクティビティ名：" + tempApli.name);      //中身チェック！
+			}
+
+            for (int i = 0 ; i < 12 ; i++){                                //ヤマダアイテムをテーブルに入れる
+
+                appsList.Add(yamada[i]);
+
+                Console.WriteLine("アクティビティ名：" + yamada[i].name);    //中身チェック！
+
 			}
 		}
 
 		void SetMenuView()  // ランチャーボタンにいろいろセット
 		{
-			for (int i = 0; i < 16; i++)
+			for (int i = 0; i < BtnCnt; i++)
 			{
 				BtnId[i].SetImageDrawable(appsList[i].icon);
 				//BtnId[i].SetImageResource(Resource.Drawable.hoken);
 				BtnId[i].SetAlpha(200);
 				appsList[i].idx = i;
 			}
-			// BtnId[1].SetImageResource(Resource.Drawable.Kankon);
+			//BtnId[1].SetImageResource(Resource.Drawable.Kankon);
+			BtnId[1].SetImageDrawable(appsList[40].icon);               //アイコンの上書きチェック
+            BtnId[10].SetImageDrawable(appsList[41].icon);
 		}
 
 		// --------------- アクティビティ戻り処理
