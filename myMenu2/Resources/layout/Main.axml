@@ -158,7 +158,7 @@
                 android:useDefaultMargins="true">
                 <ImageButton
                     android:id="@+id/numBtn1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="64dp"
                     android:layout_height="56dp"
                     android:layout_columnWeight="1"
                     android:scaleType="centerInside"
@@ -166,7 +166,7 @@
                     android:layout_marginTop="4.0dp" />
                 <ImageButton
                     android:id="@+id/numBtn2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="64dp"
                     android:layout_height="56dp"
                     android:layout_columnWeight="1"
                     android:scaleType="centerInside"
@@ -174,7 +174,7 @@
                     android:layout_marginTop="4.0dp" />
                 <ImageButton
                     android:id="@+id/numBtn3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="64dp"
                     android:layout_height="56dp"
                     android:layout_columnWeight="1"
                     android:scaleType="centerInside"
