@@ -153,6 +153,27 @@ namespace myMenu2
 			// aapt resource value: 0x7f060032
 			public const int item1 = 2131099698;
 			
+			// aapt resource value: 0x7f06003b
+			public const int item10 = 2131099707;
+			
+			// aapt resource value: 0x7f06003c
+			public const int item11 = 2131099708;
+			
+			// aapt resource value: 0x7f06003d
+			public const int item12 = 2131099709;
+			
+			// aapt resource value: 0x7f06003e
+			public const int item13 = 2131099710;
+			
+			// aapt resource value: 0x7f06003f
+			public const int item14 = 2131099711;
+			
+			// aapt resource value: 0x7f060040
+			public const int item15 = 2131099712;
+			
+			// aapt resource value: 0x7f060041
+			public const int item16 = 2131099713;
+			
 			// aapt resource value: 0x7f060033
 			public const int item2 = 2131099699;
 			
@@ -161,6 +182,21 @@ namespace myMenu2
 			
 			// aapt resource value: 0x7f060035
 			public const int item4 = 2131099701;
+			
+			// aapt resource value: 0x7f060036
+			public const int item5 = 2131099702;
+			
+			// aapt resource value: 0x7f060037
+			public const int item6 = 2131099703;
+			
+			// aapt resource value: 0x7f060038
+			public const int item7 = 2131099704;
+			
+			// aapt resource value: 0x7f060039
+			public const int item8 = 2131099705;
+			
+			// aapt resource value: 0x7f06003a
+			public const int item9 = 2131099706;
 			
 			// aapt resource value: 0x7f060009
 			public const int labelText = 2131099657;
